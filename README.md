@@ -1,6 +1,6 @@
 # DriftDelivery
 ## Description
-DriftDelivery is my pet project. The idea of was looked from [this test task](https://github.com/avito-tech/safedeal-backend-trainee). I've decided try to develop delivery service api on Elixir. This will help me to be a better Backend Developer in future.
+DriftDelivery is my pet project. The idea of it was looked from [this test task](https://github.com/avito-tech/safedeal-backend-trainee). I've decided try to develop delivery service api on Elixir. This will help me to be a better Backend Developer in future.
 
 ## Requirements 
 1. PostgreSQL
