@@ -7,8 +7,8 @@ defmodule DriftDelivery.Merchants.MerchantStore do
   alias DriftDelivery.Stores.Store
 
   schema "merchant_store" do
-    belongs_to :store, Store
     belongs_to :merchant, Merchant
+    belongs_to :store, Store
 
     field :first_name, :string
     field :last_name, :string
