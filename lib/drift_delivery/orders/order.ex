@@ -5,6 +5,7 @@ defmodule DriftDelivery.Orders.Order do
 
   schema "orders" do
     field :paycheck, :map
+    field :payment_status, :string
 
     timestamps()
   end
@@ -12,10 +13,13 @@ defmodule DriftDelivery.Orders.Order do
   def changeset(order, attrs \\ %{}) do
     order
     |> cast(attrs, [
-      :paycheck
+      :paycheck,
+      :payment_status
     ])
     |> validate_required([
-      :paycheck
+      :paycheck,
+      :payment_status
     ])
+    |> validate_inclusion(:payment_status, ["pending", "canceled", "successful"])
   end
 end
