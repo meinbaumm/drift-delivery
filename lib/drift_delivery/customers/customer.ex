@@ -4,7 +4,15 @@ defmodule DriftDelivery.Customers.Customer do
   import Ecto.Changeset
   import Bcrypt, only: [hash_pwd_salt: 1]
 
+  alias DriftDelivery.Orders.Order
+  alias DriftDelivery.Reviews.Review
+  alias DriftDelivery.Customers.CustomerCard
+
   schema "customers" do
+    has_many :order, Order
+    has_many :review, Review
+    has_many :customer_card, CustomerCard
+
     field :first_name, :string
     field :last_name, :string
     field :additional_name, :string

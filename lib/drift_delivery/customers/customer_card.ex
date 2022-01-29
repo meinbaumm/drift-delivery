@@ -3,7 +3,11 @@ defmodule DriftDelivery.Customers.CustomerCard do
 
   import Ecto.Changeset
 
+  alias DriftDelivery.Customers.CustomerCard
+
   schema "reviews" do
+    belongs_to :customer, CustomerCard
+
     field :number, :string, null: false
     field :valid_date, :date, null: false
 

@@ -4,7 +4,11 @@ defmodule DriftDelivery.Merchants.Merchant do
   import Ecto.Changeset
   import Bcrypt, only: [hash_pwd_salt: 1]
 
+  alias DriftDelivery.Stores.Store
+
   schema "merchants" do
+    has_many :store, Store
+
     field :first_name, :string
     field :last_name, :string
     field :additional_name, :string

@@ -3,7 +3,13 @@ defmodule DriftDelivery.Deliveries.Delivery do
 
   import Ecto.Changeset
 
+  alias DriftDelivery.Couriers.Courier
+  alias DriftDelivery.Orders.Order
+
   schema "deliveries" do
+    belongs_to :courier, Courier
+    belongs_to :order, Order
+
     field :cost, :integer, null: false
     field :rate, :integer, null: false
     field :duration, :integer

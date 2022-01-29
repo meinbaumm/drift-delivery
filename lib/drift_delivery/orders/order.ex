@@ -3,7 +3,13 @@ defmodule DriftDelivery.Orders.Order do
 
   import Ecto.Changeset
 
+  alias DriftDelivery.Customers.Customer
+  alias DriftDelivery.Deliveries.Delivery
+
   schema "orders" do
+    belongs_to :customer, Customer
+    has_one :delivery, Delivery
+
     field :paycheck, :map
     field :payment_status, :string
 

@@ -3,7 +3,13 @@ defmodule DriftDelivery.Reviews.Review do
 
   import Ecto.Changeset
 
+  alias DriftDelivery.Customers.Customer
+  alias DriftDelivery.Products.Product
+
   schema "reviews" do
+    belongs_to :customer, Customer
+    belongs_to :product, Product
+
     field :review_text, :string, null: false
     field :status, :string, null: false
 

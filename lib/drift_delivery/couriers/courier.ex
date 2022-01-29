@@ -4,7 +4,11 @@ defmodule DriftDelivery.Couriers.Courier do
   import Ecto.Changeset
   import Bcrypt, only: [hash_pwd_salt: 1]
 
+  alias DriftDelivery.Deliveries.Delivery
+
   schema "couriers" do
+    has_many :delivery, Delivery
+
     field :first_name, :string
     field :last_name, :string
     field :additional_name, :string
