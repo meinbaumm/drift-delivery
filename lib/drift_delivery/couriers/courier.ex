@@ -39,8 +39,11 @@ defmodule DriftDelivery.Couriers.Courier do
       :transportation_type
     ])
     |> validate_inclusion(:transportation_type, ["car", "feet", "bicycle", "scooter", "other"])
-    |> unique_constraint([:email, :phone])
-    |> validate_format(:email, ~r/@/)
+    |> unique_constraint([:email, :phone], message: "Has already been taken")
+    |> validate_format(:email, ~r/@/, message: "Wrong email format")
+    |> validate_format(:password, ~r/((?!.*[\s])(?=.*[A-Za-z\d@$!%*#?&]).{8,})/,
+      message: "Password must be longer than 7 symbols"
+    )
     |> put_password_hash()
     |> validate_required([:password_hash])
   end
