@@ -5,7 +5,7 @@ defmodule DriftDelivery.MixProject do
     [
       app: :drift_delivery,
       version: "0.1.0",
-      elixir: "~> 1.7",
+      elixir: "~> 1.12",
       elixirc_paths: elixirc_paths(Mix.env()),
       compilers: [:phoenix, :gettext] ++ Mix.compilers(),
       start_permanent: Mix.env() == :prod,
@@ -42,7 +42,13 @@ defmodule DriftDelivery.MixProject do
       {:telemetry_poller, "~> 0.4"},
       {:gettext, "~> 0.11"},
       {:jason, "~> 1.0"},
-      {:plug_cowboy, "~> 2.0"}
+      {:plug_cowboy, "~> 2.0"},
+      {:bcrypt_elixir, "~> 2.0"},
+      {:guardian, "~> 2.0"},
+      {:guardian_db, "~> 2.0"},
+      {:canary, "~> 1.1.1"},
+      {:canada, "~> 1.0.1"},
+      {:faker, "~> 0.16"}
     ]
   end
 
